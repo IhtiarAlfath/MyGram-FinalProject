@@ -1,0 +1,755 @@
+definitions:
+  dto.CommentResult:
+    properties:
+      created_at:
+        example: 2023-04-14 09:44:00.462102+07
+        type: string
+      id:
+        example: 1
+        type: integer
+      message:
+        example: wow...
+        type: string
+      photo_id:
+        example: 1
+        type: integer
+      updated_at:
+        example: 2023-04-14 09:44:00.462102+07
+        type: string
+      user_id:
+        example: 1
+        type: integer
+    type: object
+  dto.CreateCommentRequest:
+    properties:
+      message:
+        example: wow...
+        type: string
+    type: object
+  dto.CreateCommentResponse:
+    properties:
+      message:
+        example: successfully created comment
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 201
+        type: integer
+    type: object
+  dto.CreatePhotoRequest:
+    properties:
+      caption:
+        example: myphoto description
+        type: string
+      photo_url:
+        example: photo.com
+        type: string
+      title:
+        example: myphoto
+        type: string
+    type: object
+  dto.CreatePhotoResponse:
+    properties:
+      message:
+        example: successfully created photo
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 201
+        type: integer
+    type: object
+  dto.CreateSocialMediaRequest:
+    properties:
+      name:
+        type: string
+      photo_url:
+        type: string
+    type: object
+  dto.DeleteCommentResponse:
+    properties:
+      message:
+        example: successfully deleted comment
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.DeletePhotoResponse:
+    properties:
+      message:
+        example: successfully deleted photo
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.GetCommentByIdResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.CommentResult'
+      message:
+        example: comment data successfully sent
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.GetCommentsResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.CommentResult'
+        type: array
+      message:
+        example: comment data successfully sent
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.GetPhotoByIdResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.PhotoResult'
+      message:
+        example: photo data successfully sent
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.GetPhotosResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.PhotoResult'
+        type: array
+      message:
+        example: photos data successfully sent
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.GetSocialMediaByIdResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.SocialMediaResult'
+      message:
+        example: social media data successfully sent
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.GetSocialMediasResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.SocialMediaResult'
+        type: array
+      message:
+        example: social media data successfully sent
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.LoginRequest:
+    properties:
+      email:
+        example: budi@gmail.com
+        type: string
+      password:
+        example: budibudi
+        type: string
+    type: object
+  dto.LoginResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.TokenResponse'
+      message:
+        example: login successfully
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.NewUserRequest:
+    properties:
+      age:
+        example: 12
+        type: integer
+      email:
+        example: budi@gmail.com
+        type: string
+      password:
+        example: budibudi
+        type: string
+      username:
+        example: budi
+        type: string
+    type: object
+  dto.NewUserResponse:
+    properties:
+      message:
+        example: registered successfully
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 201
+        type: integer
+    type: object
+  dto.PhotoResult:
+    properties:
+      caption:
+        example: myphoto description
+        type: string
+      created_at:
+        example: 2023-04-14 09:44:00.462102+07
+        type: string
+      id:
+        example: 1
+        type: integer
+      photo_url:
+        example: photo.com
+        type: string
+      title:
+        example: myphoto
+        type: string
+      updated_at:
+        example: 2023-04-14 09:44:00.462102+07
+        type: string
+      user_id:
+        example: 2
+        type: integer
+    type: object
+  dto.SocialMediaResult:
+    properties:
+      created_at:
+        example: 2023-04-14 09:44:00.462102+07
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: budi_
+        type: string
+      social_media_url:
+        example: budi_.com
+        type: string
+      updated_at:
+        example: 2023-04-14 09:44:00.462102+07
+        type: string
+      user_id:
+        example: 1
+        type: integer
+    type: object
+  dto.TokenResponse:
+    properties:
+      token:
+        example: fgsfsdfbawgy45563456hfgbe
+        type: string
+    type: object
+  dto.UpdatePhotoResponse:
+    properties:
+      message:
+        example: successfully updated photo
+        type: string
+      result:
+        example: success
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /photo:
+    get:
+      description: Get All Photo Data
+      operationId: get-all-photo-data
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.GetPhotosResponse'
+      tags:
+      - Photo
+    post:
+      consumes:
+      - application/json
+      description: Create Photo Data
+      operationId: create-photo-data
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: request body json
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreatePhotoRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.CreatePhotoResponse'
+      tags:
+      - Photo
+  /photo/{photoId}:
+    delete:
+      description: Delete Photo Data By Id
+      operationId: delete-photo-data-by-id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Photo's id
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.DeletePhotoResponse'
+      tags:
+      - Photo
+    get:
+      description: Get One Photo Data By Id
+      operationId: get-one-photo-data-by-id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Photo's id
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.GetPhotoByIdResponse'
+      tags:
+      - Photo
+    put:
+      consumes:
+      - application/json
+      description: Update Photo Data
+      operationId: update-photo-data
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Photo's id
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      - description: request body json
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreatePhotoRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.UpdatePhotoResponse'
+      tags:
+      - Photo
+  /photo/{photoId}/comment:
+    get:
+      description: Get All Comments Data
+      operationId: get-all-comment
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Photo's id
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.GetCommentsResponse'
+      tags:
+      - Comment
+    post:
+      consumes:
+      - application/json
+      description: Create Comment Data
+      operationId: create-comment-data
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Photo's id
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      - description: request body json
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateCommentRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.CreateCommentResponse'
+      tags:
+      - Comment
+  /photo/{photoId}/comment/{commentId}:
+    delete:
+      description: Delete Comment Data By Id
+      operationId: delete-comment-data-by-id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Photo's id
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      - description: Comment's id
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.DeleteCommentResponse'
+      tags:
+      - Comment
+    get:
+      description: Get One Comment Data By Id
+      operationId: get-one-comment-data-by-id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Photo's id
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      - description: Comment's id
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.GetCommentByIdResponse'
+      tags:
+      - Comment
+    put:
+      consumes:
+      - application/json
+      description: Update Comment Data
+      operationId: update-comment-data
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Photo's id
+        in: path
+        name: photoId
+        required: true
+        type: integer
+      - description: Comment's id
+        in: path
+        name: commentId
+        required: true
+        type: integer
+      - description: request body json
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateCommentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.UpdatePhotoResponse'
+      tags:
+      - Comment
+  /socialmedia:
+    get:
+      description: Get All Social Media Data
+      operationId: get-all-social-media-data
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.GetSocialMediasResponse'
+      tags:
+      - Social Media
+    post:
+      consumes:
+      - application/json
+      description: Create Social Media Data
+      operationId: create-social-media-data
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: request body json
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateSocialMediaRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.CreatePhotoResponse'
+      tags:
+      - Social Media
+  /socialmedia/{socialMediaId}:
+    delete:
+      description: Delete Social Media Data By Id
+      operationId: delete-social-media-data-by-id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Social media's id
+        in: path
+        name: socialMediaId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.DeletePhotoResponse'
+      tags:
+      - Social Media
+    get:
+      description: Get One Social Media Data By Id
+      operationId: get-one-social-media-data-by-id
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Social media's id
+        in: path
+        name: socialMediaId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.GetSocialMediaByIdResponse'
+      tags:
+      - Social Media
+    put:
+      consumes:
+      - application/json
+      description: Update Social Media Data
+      operationId: update-social-media-data
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Social media's id
+        in: path
+        name: socialMediaId
+        required: true
+        type: integer
+      - description: request body json
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateSocialMediaRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.UpdatePhotoResponse'
+      tags:
+      - Social Media
+  /users/login:
+    post:
+      consumes:
+      - application/json
+      description: Login user Data
+      operationId: login-user
+      parameters:
+      - description: request body json
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/dto.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.LoginResponse'
+      tags:
+      - users
+  /users/register:
+    post:
+      consumes:
+      - application/json
+      description: Create New user Data
+      operationId: register-user
+      parameters:
+      - description: request body json
+        in: body
+        name: RequestBody
+        required: true
+        schema:
+          $ref: '#/definitions/dto.NewUserRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.NewUserResponse'
+      tags:
+      - users
+swagger: "2.0"
