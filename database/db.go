@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 
+	_ "github.com/joho/godotenv/autoload"
 	_ "github.com/lib/pq"
 )
 

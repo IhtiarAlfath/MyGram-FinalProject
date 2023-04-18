@@ -16,7 +16,7 @@ import (
 )
 
 func StartApp() {
-	const PORT = "3030"
+	const PORT = ":3030"
 
 	database.InitiliazeDatabase()
 
@@ -99,5 +99,5 @@ func StartApp() {
 	}
 
 
-	route.Run(":", PORT)
+	route.Run(PORT)
 }
